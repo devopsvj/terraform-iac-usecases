@@ -1,3 +1,4 @@
+/*
 provider "aws" {
   region     = "ap-southeast-1"
   shared_credentials_file = "$HOME/.aws/credentials"
@@ -13,3 +14,4 @@ resource "aws_instance" "web" {
     Name = "HelloWorld"
   }
 }
+*/
