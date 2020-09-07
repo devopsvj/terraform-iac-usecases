@@ -7,16 +7,10 @@ provider "aws" {
 
 resource "aws_instance" "myec2" {
   ami           = "ami-0cd31be676780afa7"
-  instance_type = lookup(var.instance_type,terraform.workspace)
+  instance_type = "t2.micro"
 }
 
-variable "instance_type" {
- type = map
-
- default = {
-   default = "t2.nano"
-   stage = "t2.nano"
-   dev = "t2.micro"
-   prod = "t2.large"
- }
+resource "aws_iam_user" "lb" {
+  name = "loadbalancer"
+  path = "/system/"
 }
