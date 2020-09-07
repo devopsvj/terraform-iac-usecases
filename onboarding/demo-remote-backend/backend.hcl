@@ -1,3 +1,3 @@
-workspaces { name = "terraform-iac-usecases" }
+workspaces { name = "remote-backend-demo" }
 hostname     = "app.terraform.io"
 organization = "techbeatly"
