@@ -4,7 +4,13 @@ provider "aws" {
 
 provider "aws" {
   region = "ap-south-1"
-  alias = "aws02"
+  alias  = "aws02"
+}
+
+provider "aws" {
+  region  = "ap-south-1"
+  alias   = "aws03"
+  profile = "devops"
 }
 
 

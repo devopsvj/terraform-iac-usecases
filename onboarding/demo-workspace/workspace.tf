@@ -7,7 +7,7 @@ provider "aws" {
 
 resource "aws_instance" "myec2" {
   ami           = "ami-0cd31be676780afa7"
-  instance_type = lookup(var.instance_type,terraform.workspace)
+  instance_type = lookup(var.instance_type,terraform.workspace, "t2.micro")
 }
 
 variable "instance_type" {
