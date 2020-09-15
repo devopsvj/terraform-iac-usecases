@@ -25,7 +25,7 @@ resource "aws_eip_association" "eip_assoc" {
 
 resource "aws_security_group" "allow_tls" {
   name        = "test-allow_tls"
-  #description = "Allow TLS inbound traffic"
+  description = "Allow TLS inbound traffic"
   #vpc_id      = aws_vpc.main.id
 
   ingress {
@@ -33,7 +33,7 @@ resource "aws_security_group" "allow_tls" {
     from_port   = 443
     to_port     = 443
     protocol    = "tcp"
-    cidr_blocks = [var.my_ip]
+    cidr_blocks = ["${aws_eip.mylb.public_ip}/32"]
   }
   
   tags = {
